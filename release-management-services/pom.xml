@@ -8,4 +8,17 @@
 	</parent>
 	<artifactId>release-management-services</artifactId>
 	<name>release-management-services</name>
+	
+	<dependencies>
+		<dependency>
+			<groupId>release-management</groupId>
+			<artifactId>release-management-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>ma.glasnost.orika</groupId>
+			<artifactId>orika-core</artifactId>
+			<version>1.4.5</version>
+		</dependency>
+	</dependencies>
 </project>

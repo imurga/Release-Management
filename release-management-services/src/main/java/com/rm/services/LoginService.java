@@ -1,6 +1,8 @@
 package com.rm.services;
 
+import com.rm.beans.UserBean;
+
 public interface LoginService {
 
-	boolean validateLogin(String userId, String password);
+	UserBean validateLogin(String userId, String password);
 }

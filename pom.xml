@@ -10,7 +10,6 @@
 	<modules>
 		<module>release-management-utils</module>
 		<module>release-management-dao</module>
-		<module>release-management-model</module>
 		<module>release-management-web</module>
 		<module>release-management-services</module>
 	</modules>
