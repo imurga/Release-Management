@@ -9,33 +9,33 @@ import org.springframework.util.CollectionUtils;
 import com.rm.beans.UserBean;
 import com.rm.converters.UserConverter;
 import com.rm.dao.entity.User;
-import com.rm.dao.repo.UserRepo;
+import com.rm.dao.repo.UserRepository;
 import com.rm.services.LoginService;
 
 @Repository
 public class LoginServiceImpl implements LoginService {
 
-	@Autowired
-	private UserRepo repository;
+    @Autowired
+    private UserRepository repository;
 
-	@Override
-	public UserBean validateLogin(String userId, String password) {
+    @Override
+    public UserBean validateLogin(String userId, String password) {
 
-		UserBean bean = null;
-		UserConverter converter = new UserConverter();
+        UserBean bean = null;
+        UserConverter converter = new UserConverter();
 
-		List<User> users = (List<User>) repository.findAll();
+        List<User> users = repository.findByUserName(userId);
 
-		if (!CollectionUtils.isEmpty(users)) {
+        if (!CollectionUtils.isEmpty(users)) {
 
-			User user = users.get(0);
+            User user = users.get(0);
 
-			if (user.getPassword().equals(password)) {
-				bean = converter.toBean(user);
-			}
+            if (user.getPassword().equals(password)) {
+                bean = converter.toBean(user);
+            }
 
-		}
+        }
 
-		return bean;
-	}
+        return bean;
+    }
 }
