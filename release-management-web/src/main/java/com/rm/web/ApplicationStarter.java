@@ -6,16 +6,15 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-@EnableMongoRepositories("com.rm.dao.repo")
+import com.rm.dao.repo.UserRepository;
+
+@EnableMongoRepositories(basePackageClasses = UserRepository.class)
 @EnableAutoConfiguration
 @Configuration
-@ComponentScan({
-	"com.rm.web",
-	"com.rm.services"
-})
+@ComponentScan({ "com.rm.web", "com.rm.services" })
 public class ApplicationStarter {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ApplicationStarter.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ApplicationStarter.class, args);
+    }
 }
