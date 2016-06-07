@@ -23,7 +23,7 @@ public class Environment {
 	private List<Release> releases = new ArrayList<Release>();
 	
 	@DBRef(db = "variable")
-	private List<Variables> variables = new ArrayList<Variables>();
+	private List<Variable> variables = new ArrayList<Variable>();
 
 	public long getId() {
 		return id;
@@ -65,11 +65,11 @@ public class Environment {
 		this.name = name;
 	}
 
-	public List<Variables> getVariables() {
+	public List<Variable> getVariables() {
 		return variables;
 	}
 
-	public void setVariables(List<Variables> variables) {
+	public void setVariables(List<Variable> variables) {
 		this.variables = variables;
 	}
 

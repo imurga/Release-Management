@@ -7,11 +7,11 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 import com.rm.beans.EnvironmentBean;
 import com.rm.beans.VariablesBean;
 import com.rm.dao.entity.Environment;
-import com.rm.dao.entity.Variables;
+import com.rm.dao.entity.Variable;
 
 public class VariablesConverter {
 
-	public VariablesBean toBean(Variables variable) {
+	public VariablesBean toBean(Variable variable) {
 		MapperFactory mapperFactory = new DefaultMapperFactory.Builder()
 				.build();
 		mapperFactory.classMap(EnvironmentBean.class, Environment.class)
@@ -22,13 +22,13 @@ public class VariablesConverter {
 		return mapper.map(variable, VariablesBean.class);
 	}
 
-	public Variables toEntity(VariablesBean variableBean) {
+	public Variable toEntity(VariablesBean variableBean) {
 		MapperFactory mapperFactory = new DefaultMapperFactory.Builder()
 				.build();
-		mapperFactory.classMap(Variables.class, VariablesBean.class).register();
+		mapperFactory.classMap(Variable.class, VariablesBean.class).register();
 
 		MapperFacade mapper = mapperFactory.getMapperFacade();
-		return mapper.map(variableBean, Variables.class);
+		return mapper.map(variableBean, Variable.class);
 	}
 
 }
