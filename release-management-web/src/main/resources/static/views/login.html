@@ -1,20 +1,20 @@
-<div class="row">
-  <div class="medium-6 medium-centered large-4 large-centered columns">
-
-    <form>
-      <div class="row column log-in-form">
-        <h4 class="text-center">Log in to the release management</h4>
-        <label>User
-          <input type="text" placeholder="User" ng-model="user">
-        </label>
-        <label>Password
-          <input type="password" placeholder="Password" ng-model="password">
-        </label>
-        <input id="show-password" type="checkbox"><label for="show-password">Show password</label>
-        <p><a type="submit" class="button expanded" ng-click="loginUser();">Log In</a></p>
-        <p class="text-center"><a href="#">Forgot your password?</a></p>   
-      </div>
-    </form>
-
-  </div>
+<div layout="column" class="loginBox md-whiteframe-z1">
+  <md-toolbar>
+    <h2 class="md-toolbar-tools"><span>Login</span></h2>
+  </md-toolbar>
+  <md-content layout="column" class="md-padding">
+    <md-input-container>
+      <label>User</label>
+      <input type="text" ng-model="user"/>
+    </md-input-container>
+    <md-input-container>
+      <label>Password</label>
+      <input type="password" ng-model="password"/>
+    </md-input-container>
+    <div layout="row" layout-align="center center" style="padding-top:20px;">
+      <md-button class="md-raised md-primary" ng-click="loginUser();">Login</md-button>
+      <div flex="flex"></div>
+      <md-button href="" md-no-ink="md-no-ink">Forgot Password</md-button>
+    </div>
+  </md-content>
 </div>

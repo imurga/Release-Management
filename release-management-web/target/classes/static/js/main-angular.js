@@ -1,4 +1,4 @@
-var app = angular.module("app", ['ui.router']);
+var app = angular.module("app", ['ui.router','ngMaterial']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $provide) {
 	$stateProvider.state('app',
@@ -14,11 +14,22 @@ app.config(function ($stateProvider, $urlRouterProvider, $provide) {
 	)
 	.state('app.board',
 		{
-			url: "/board",
+			url: "board",
 			views: {
 				'content@' : {
 					templateUrl : 'views/board.html',
 					controller : 'BoardController'
+				}
+			}
+		}
+	)
+	.state('app.environment',
+		{
+			url: "environment",
+			views: {
+				'content@' : {
+					templateUrl : 'views/environment.html',
+					controller : 'EnvironmentController'
 				}
 			}
 		}

@@ -1,5 +1,5 @@
-angular.module('app').controller("LoginController", ['$scope', '$http','LoginService', '$state',
-		function ($scope, $http, LoginService, $state) {
+angular.module('app').controller("LoginController", ['$scope', '$http','Service', '$state',
+		function ($scope, $http, Service, $state) {
 	
 	console.log("Running")
 	
@@ -9,7 +9,7 @@ angular.module('app').controller("LoginController", ['$scope', '$http','LoginSer
 		
 		console.log(userCredentials);
 		
-		LoginService.getUserLoginInformation(userCredentials)
+		Service.getUserLoginInformation(userCredentials)
 		.then(function successCallback(response) {
 			console.log (response);
 			$state.go('app.board');
