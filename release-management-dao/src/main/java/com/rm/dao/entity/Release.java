@@ -1,5 +1,6 @@
 package com.rm.dao.entity;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
@@ -9,13 +10,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Release {
 	
 	@Id
-	private long id;
+	private BigInteger id;
 	
 	private String name;
 	
 	private String version;
-	
-	private Material material;
 
 	private Date date;
 	
@@ -23,11 +22,17 @@ public class Release {
 	
 	private String jenkinsUrl;
 
-	public long getId() {
+	private String type;
+
+	private String url;
+
+	private String branch;
+
+	public BigInteger getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(BigInteger id) {
 		this.id = id;
 	}
 
@@ -55,14 +60,6 @@ public class Release {
 		this.name = name;
 	}
 
-	public Material getMaterial() {
-		return material;
-	}
-
-	public void setMaterial(Material material) {
-		this.material = material;
-	}
-
 	public String getJiraUrl() {
 		return jiraUrl;
 	}
@@ -77,6 +74,30 @@ public class Release {
 
 	public void setJenkinsUrl(String jenkinsUrl) {
 		this.jenkinsUrl = jenkinsUrl;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getBranch() {
+		return branch;
+	}
+
+	public void setBranch(String branch) {
+		this.branch = branch;
 	}
 	
 }

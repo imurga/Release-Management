@@ -1,4 +1,19 @@
-<md-content class="md-padding">
-  <h1 class="md-display-2">Release</h1>
-  <md-button class="md-raised right">Button</md-button>
-</md-content>
+<div class="demo-md-panel md-padding" >
+<div layout="row">
+    <div flex="33">
+	  <h1 class="md-display-2">Release</h1>
+	  <md-button class="md-primary md-raised demo-dialog-open-button" ng-click="addReleaseView();">Add New Release</md-button>
+	  <md-list>
+		<md-list-item class="md-3-line" ng-repeat="item in releaseList" ng-model="releaseList">
+		  <img ng-src="img/icon_pipeline.png" class="md-avatar" alt="{{item.name}}" />
+		  <div class="md-list-item-text" layout="column">
+		    <h3>{{ item.name }}</h3>
+		    <p>{{ item.type }}</p>
+		    <label>{{ item.version }}</label>
+		  </div>
+		</md-list-item>
+	  </md-list>
+	  {{releaseList}}
+	</div>
+</div>
+</div>

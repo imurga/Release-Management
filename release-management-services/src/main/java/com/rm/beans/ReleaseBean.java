@@ -2,23 +2,25 @@ package com.rm.beans;
 
 import java.util.Date;
 
-import com.rm.dao.entity.Material;
-
 public class ReleaseBean {
 
 	private long id;
-	
+
 	private String name;
-	
+
 	private String version;
-	
-	private Material material;
 
 	private Date date;
-	
+
 	private String jiraUrl;
-	
+
 	private String jenkinsUrl;
+
+	private String type;
+
+	private String url;
+
+	private String branch;
 
 	public long getId() {
 		return id;
@@ -44,14 +46,6 @@ public class ReleaseBean {
 		this.version = version;
 	}
 
-	public Material getMaterial() {
-		return material;
-	}
-
-	public void setMaterial(Material material) {
-		this.material = material;
-	}
-
 	public Date getDate() {
 		return date;
 	}
@@ -75,5 +69,31 @@ public class ReleaseBean {
 	public void setJenkinsUrl(String jenkinsUrl) {
 		this.jenkinsUrl = jenkinsUrl;
 	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getBranch() {
+		return branch;
+	}
+
+	public void setBranch(String branch) {
+		this.branch = branch;
+	}
+	
+	
 
 }

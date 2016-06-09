@@ -3,4 +3,51 @@ function ($scope, $http, Service, $state, $rootScope) {
 	
 	$rootScope.showNav = true;
     
+	$scope.addReleaseView = function(){
+		$state.go('app.newRelease');
+	}
+	
+	$scope.returnRelease = function(){
+		$state.go('app.board');
+	}
+	
+	$scope.init = function(){
+		console.log('initial service');
+			Service.getReleaseList()
+			.then(function successCallback(response) {
+				console.log(response);
+				$state.releaseList = response.data;
+			  }, function errorCallback(response) {
+				  console.log("error");
+			  });
+	};
+	
+	$scope.init();
+	
+	
+	$scope.saveRelease = function(){
+		
+		console.log('here');
+		$scope.release = {
+				"name": $scope.name,
+				"version": $scope.version,
+				"type": $scope.type,
+				"url": $scope.url,
+				"branch": $scope.branch,
+				"jiraUrl": $scope.jiraUrl,
+				"jenkinsUrl": $scope.jenkinsUrl,
+		};
+		
+		console.log($scope.release);
+		
+		Service.saveRelease($scope.release)
+		.then(function successCallback(response) {
+			console.log (response);
+			$state.go('app.board');
+		  }, function errorCallback(response) {
+			  console.log("error");
+		  });
+		
+	}
+	$scope.releaseList = {};
 }]);

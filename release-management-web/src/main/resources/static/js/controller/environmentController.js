@@ -24,6 +24,10 @@ angular.module('app').controller("EnvironmentController", ['$scope', '$http', 'S
 		$state.go('app.newEnvironment');
 	}
 	
+	$scope.returnEnvironment = function(){
+		$state.go('app.environment');
+	}
+	
 	Service.getEnvironmentList()
 	.then(function successCallback(response) {
 		console.log (response);

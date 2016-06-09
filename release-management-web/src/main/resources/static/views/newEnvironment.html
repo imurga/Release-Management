@@ -1,3 +1,14 @@
-<div class="demo-md-panel md-padding" >
-test
+<div layout="column" ng-cloak class="md-inline-form">
+  <md-content layout-padding>
+    <div>
+      <form name="userForm">
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Environment Name</label>
+            <input ng-model="environment.name">
+          </md-input-container>
+        </div>
+      </form>
+    </div>
+  </md-content>
 </div>

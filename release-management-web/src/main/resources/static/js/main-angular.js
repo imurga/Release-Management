@@ -1,4 +1,4 @@
-var app = angular.module("app", ['ui.router','ngMaterial']);
+var app = angular.module("app", ['ui.router','ngMaterial', 'ngAnimate']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $provide) {
 	$stateProvider
@@ -53,6 +53,17 @@ app.config(function ($stateProvider, $urlRouterProvider, $provide) {
 				'content@' : {
 					templateUrl : 'views/newEnvironment.html',
 					controller : 'EnvironmentController'
+				}
+			}
+		}
+	)
+	.state('app.newRelease',
+		{
+			url: "newrelease",
+			views: {
+				'content@' : {
+					templateUrl : 'views/newRelease.html',
+					controller : 'BoardController'
 				}
 			}
 		}

@@ -1,9 +1,12 @@
 package com.rm.services;
 
+import java.util.List;
+
 import com.rm.beans.ReleaseBean;
-import com.rm.dao.entity.Release;
 
 public interface ReleaseService {
 
-	public ReleaseBean save(Release release);
+	public ReleaseBean save(ReleaseBean release);
+	
+	public List<ReleaseBean> getAllRelease();
 }

@@ -1,0 +1,54 @@
+<div layout="column" ng-cloak class="md-inline-form">
+  <md-content layout-padding>
+    <div>
+      <form name="releaseForm">
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Release Name</label>
+            <input ng-model="name">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Version</label>
+            <input ng-model="version">
+          </md-input-container>
+        </div>
+        <h2>Materials</h2>
+        <div layout-gt-sm="row">
+          <md-input-container style="margin-right: 10px;">
+	        <label>Material Type</label>
+	          <md-select class="width-100" placeholder="Type" data-ng-model="type">
+			    <md-option value="git">Git</md-option>
+			    <md-option value="svn">Svn</md-option>
+			  </md-select>
+	      </md-input-container>
+	      <md-input-container class="md-block" flex-gt-sm>
+            <label>SCM URL</label>
+            <input ng-model="url">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Branch</label>
+            <input ng-model="branch">
+          </md-input-container>
+        </div>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Jira URL</label>
+            <input ng-model="jiraUrl">
+          </md-input-container>
+        </div>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Jenkins URL</label>
+            <input ng-model="jenkinsUrl">
+          </md-input-container>
+        </div>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <md-button class="md-raised" ng-click="returnRelease();">Cancel</md-button>
+      		<md-button class="md-raised md-primary" ng-click="saveRelease();">Save</md-button>
+          </md-input-container>
+        </div>
+      </form>
+    </div>
+  </md-content>
+</div>
