@@ -1,11 +1,14 @@
-angular.module('app').controller("LoginController", ['$scope', '$http','Service', '$state',
-		function ($scope, $http, Service, $state) {
+angular.module('app').controller("LoginController", ['$scope', '$http','Service', '$state', '$rootScope',
+		function ($scope, $http, Service, $state, $rootScope) {
 	
 	console.log("Running")
 	
+	$rootScope.showNav = false;
+	
 	$scope.loginUser = function(){
 				
-		var userCredentials = {"id": $scope.user, "password": $scope.password};
+		//var userCredentials = {"id": $scope.user, "password": $scope.password};
+		var userCredentials = {"id": 'imurga', "password": 'imurga'};
 		
 		console.log(userCredentials);
 		

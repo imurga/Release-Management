@@ -1,13 +1,25 @@
 var app = angular.module("app", ['ui.router','ngMaterial']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $provide) {
-	$stateProvider.state('app',
+	$stateProvider
+	.state('app',
 		{
 			url: "/",
 			views: {
 				'content' : {
 					templateUrl : 'views/login.html',
 					controller : 'LoginController'
+				}
+			}
+		}
+	)
+	.state('app.main',
+		{
+			url: '',
+			views: {
+				'content@': {
+					template: '',
+					controller: 'MainCtrl'
 				}
 			}
 		}
@@ -34,7 +46,26 @@ app.config(function ($stateProvider, $urlRouterProvider, $provide) {
 			}
 		}
 	)
+	.state('app.newEnvironment',
+		{
+			url: "newenvironment",
+			views: {
+				'content@' : {
+					templateUrl : 'views/newEnvironment.html',
+					controller : 'EnvironmentController'
+				}
+			}
+		}
+	)
 	;
 	
 	$urlRouterProvider.otherwise("/login");
 });
+
+app.controller('NavCtrl', NavCtrl);
+
+function NavCtrl($scope, $rootScope) {
+	$rootScope.showNav = true;
+	$rootScope.currentNavItem = 'board';
+	console.log('hee');
+}

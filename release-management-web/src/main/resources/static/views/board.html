@@ -1,45 +1,4 @@
-<div ng-cloak="" class="tabsdemoDynamicHeight" ng-app="app">
-  <md-content>
-    <md-tabs md-dynamic-height md-border-bottom="">
-      <md-tab label="Releases">
-      	<md-tab-body>
-	        <md-content class="md-padding">
-	          <h1 class="md-display-2">Release</h1>
-	          <md-button class="md-raised right">Button</md-button>
-	        </md-content>
-        </md-tab-body>
-      </md-tab>
-      <md-tab label="Environment">
-     	 <md-tab-body>
-	        <md-content class="md-padding">
-	          <h1 class="md-display-2">Environments</h1>
-	          <md-button class="md-raised" ng-click="addEnvironmentView();">Add New Environment</md-button>
-	          <md-list>
-			      <md-list-item class="md-3-line" ng-repeat="item in environments">
-			        <img ng-src="{{item.path}}?{{$index}}" class="md-avatar" alt="{{item.name}}" />
-			        <div class="md-list-item-text" layout="column">
-			          <h3>{{ item.name }}</h3>
-			          <p>{{ item.description }}</p>
-			        </div>
-			      </md-list-item>
-			      <md-divider ></md-divider>
-	          </md-list>
-	        </md-content>
-        </md-tab-body>
-      </md-tab>
-      <md-tab label="Admin">
-      	<md-tab-body>
-	        <md-content class="md-padding">
-	          <h1 class="md-display-2">Admin</h1>
-	          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-	          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-	          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-	          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-	          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-	          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-	        </md-content>
-	     </md-tab-body>
-      </md-tab>
-    </md-tabs>
-  </md-content>
-</div>
+<md-content class="md-padding">
+  <h1 class="md-display-2">Release</h1>
+  <md-button class="md-raised right">Button</md-button>
+</md-content>

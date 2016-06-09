@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html data-ng-app="app">
+<html ng-app="app">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Release Management</title>
 	
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.9/angular-material.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.0-rc.5/angular-material.css" />
 	<link rel="stylesheet" type="text/css" href="css/login.css" />
 	<link rel="stylesheet" type="text/css" href="css/app.css" />
 	
 	<script type="text/javascript" src="js/vendors/jquery.js"></script>
 	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-route.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-animate.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-aria.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.9/angular-material.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-animate.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-aria.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-messages.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.0-rc.5/angular-material.js"></script>
 	
 	
 	<script src="js/main-angular.js"></script>
@@ -29,6 +29,13 @@
 </head>
 <body>
 	<div>
+		  <md-content class="md-padding" ng-if="showNav" ng-controller="NavCtrl">
+		    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">		    
+		      <md-nav-item md-nav-sref="app.board" name="board">Board</md-nav-item>
+		      <md-nav-item md-nav-sref="app.environment" name="environment">Environment</md-nav-item>
+		      <md-nav-item md-nav-sref="app.admin" name="admin">Admin</md-nav-item>
+		    </md-nav-bar>
+		  </md-content>
 		<div data-ui-view="content"></div>
 	</div>
 </body>
