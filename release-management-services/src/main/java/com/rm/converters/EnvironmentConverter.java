@@ -15,8 +15,9 @@ public class EnvironmentConverter {
 		mapperFactory.classMap(EnvironmentBean.class, Environment.class)
 				.field("id", "id").field("name", "name")
 				.field("description", "description").field("enable", "enable")
-				.field("releases", "releases")
-				.field("variables", "variables").register();
+				.field("release", "release").field("variable1", "variable1")
+				.field("variable2", "variable2")
+				.field("variable3", "variable3").register();
 		MapperFacade mapper = mapperFactory.getMapperFacade();
 		return mapper.map(environment, EnvironmentBean.class);
 	}
@@ -24,7 +25,12 @@ public class EnvironmentConverter {
 	public Environment toEntity(EnvironmentBean environmentBean) {
 		MapperFactory mapperFactory = new DefaultMapperFactory.Builder()
 				.build();
-		mapperFactory.classMap(Environment.class, EnvironmentBean.class).register();
+		mapperFactory.classMap(Environment.class, EnvironmentBean.class)
+				.field("id", "id").field("name", "name")
+				.field("description", "description").field("enable", "enable")
+				.field("release", "release").field("variable1", "variable1")
+				.field("variable2", "variable2")
+				.field("variable3", "variable3").register();
 
 		MapperFacade mapper = mapperFactory.getMapperFacade();
 		return mapper.map(environmentBean, Environment.class);

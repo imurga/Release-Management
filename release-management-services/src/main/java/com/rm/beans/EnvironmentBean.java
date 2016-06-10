@@ -1,11 +1,11 @@
 package com.rm.beans;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.rm.dao.entity.Release;
+import com.rm.dao.entity.Variable;
 
 public class EnvironmentBean {
 
-	private long id;
+	private Integer id;
 	
 	private String name;
 
@@ -13,16 +13,28 @@ public class EnvironmentBean {
 
 	private boolean enable;
 
-	private List<ReleaseBean> releases = new ArrayList<ReleaseBean>();
+	private Release release;
 	
-	private List<VariablesBean> variables = new ArrayList<VariablesBean>();
+	private Variable variable1;
+	
+	private Variable variable2;
+	
+	private Variable variable3;
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getDescription() {
@@ -41,28 +53,37 @@ public class EnvironmentBean {
 		this.enable = enable;
 	}
 
-	public List<ReleaseBean> getReleases() {
-		return releases;
+	public Release getRelease() {
+		return release;
 	}
 
-	public void setReleases(List<ReleaseBean> releases) {
-		this.releases = releases;
+	public void setRelease(Release release) {
+		this.release = release;
 	}
 
-	public String getName() {
-		return name;
+	public Variable getVariable1() {
+		return variable1;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setVariable1(Variable variable1) {
+		this.variable1 = variable1;
 	}
 
-	public List<VariablesBean> getVariables() {
-		return variables;
+	public Variable getVariable2() {
+		return variable2;
 	}
 
-	public void setVariables(List<VariablesBean> variables) {
-		this.variables = variables;
+	public void setVariable2(Variable variable2) {
+		this.variable2 = variable2;
 	}
 
+	public Variable getVariable3() {
+		return variable3;
+	}
+
+	public void setVariable3(Variable variable3) {
+		this.variable3 = variable3;
+	}
+	
+	
 }

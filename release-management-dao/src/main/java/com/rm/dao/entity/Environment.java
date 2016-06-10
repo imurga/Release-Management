@@ -1,8 +1,5 @@
 package com.rm.dao.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Environment {
 
 	@Id
-	private long id;
+	private Integer id;
 	
 	private String name;
 
@@ -20,16 +17,22 @@ public class Environment {
 	private boolean enable;
 
 	@DBRef(db = "release")
-	private List<Release> releases = new ArrayList<Release>();
+	private Release release = new Release();
 	
 	@DBRef(db = "variable")
-	private List<Variable> variables = new ArrayList<Variable>();
+	private Variable variable1 = new Variable();
+	
+	@DBRef(db = "variable")
+	private Variable variable2 = new Variable();
+	
+	@DBRef(db = "variable")
+	private Variable variable3 = new Variable();
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -49,12 +52,12 @@ public class Environment {
 		this.enable = enable;
 	}
 
-	public List<Release> getReleases() {
-		return releases;
+	public Release getReleases() {
+		return release;
 	}
 
-	public void setReleases(List<Release> releases) {
-		this.releases = releases;
+	public void setReleases(Release release) {
+		this.release = release;
 	}
 
 	public String getName() {
@@ -65,12 +68,36 @@ public class Environment {
 		this.name = name;
 	}
 
-	public List<Variable> getVariables() {
-		return variables;
+	public Release getRelease() {
+		return release;
 	}
 
-	public void setVariables(List<Variable> variables) {
-		this.variables = variables;
+	public void setRelease(Release release) {
+		this.release = release;
+	}
+
+	public Variable getVariable1() {
+		return variable1;
+	}
+
+	public void setVariable1(Variable variable1) {
+		this.variable1 = variable1;
+	}
+
+	public Variable getVariable2() {
+		return variable2;
+	}
+
+	public void setVariable2(Variable variable2) {
+		this.variable2 = variable2;
+	}
+
+	public Variable getVariable3() {
+		return variable3;
+	}
+
+	public void setVariable3(Variable variable3) {
+		this.variable3 = variable3;
 	}
 
 }

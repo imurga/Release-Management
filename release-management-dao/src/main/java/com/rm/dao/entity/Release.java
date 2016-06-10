@@ -1,6 +1,5 @@
 package com.rm.dao.entity;
 
-import java.math.BigInteger;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
@@ -10,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Release {
 	
 	@Id
-	private BigInteger id;
+	private Integer id;
 	
 	private String name;
 	
@@ -28,11 +27,11 @@ public class Release {
 
 	private String branch;
 
-	public BigInteger getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(BigInteger id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

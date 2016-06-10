@@ -5,7 +5,62 @@
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
             <label>Environment Name</label>
-            <input ng-model="environment.name">
+            <input ng-model="name">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Environment Description</label>
+            <input ng-model="description">
+          </md-input-container>
+        </div>
+        <h2>Releases to add: </h2>
+        <md-radio-group ng-model="cc.selectedId" >
+	      <div ng-repeat='release in releaseList' class="row">
+	        <div flex layout='row' layout-padding layout-align="start center" >
+	          <div flex style="max-width:200px;">
+	            {{release.name}}, {{release.version}}
+	          </div>
+	          <md-radio-button flex ng-value="release.id" ng-model="release"  class="md-primary" >
+	            {{ release.type }}
+	          </md-radio-button>
+	        </div>
+	      </div>
+	    </md-radio-group>
+		<md-divider></md-divider>
+		<h2>Environment Variables: </h2>
+		<div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Variable 1</label>
+            <input ng-model="variable1.name">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Value</label>
+            <input ng-model="variable1.value">
+          </md-input-container>
+        </div>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Variable 2</label>
+            <input ng-model="variable2.name">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Value</label>
+            <input ng-model="variable2.value">
+          </md-input-container>
+        </div>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Variable 3</label>
+            <input ng-model="variable3.name">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Value</label>
+            <input ng-model="variable3.value">
+          </md-input-container>
+        </div>
+		<div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <md-button class="md-raised" ng-click="returnEnvironment();">Cancel</md-button>
+      		<md-button class="md-raised md-primary" ng-click="saveEnvironment();">Save</md-button>
           </md-input-container>
         </div>
       </form>

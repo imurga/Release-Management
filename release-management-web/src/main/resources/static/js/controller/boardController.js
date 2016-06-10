@@ -12,11 +12,10 @@ function ($scope, $http, Service, $state, $rootScope) {
 	}
 	
 	$scope.init = function(){
-		console.log('initial service');
 			Service.getReleaseList()
 			.then(function successCallback(response) {
 				console.log(response);
-				$state.releaseList = response.data;
+				$scope.releaseList = response.data;
 			  }, function errorCallback(response) {
 				  console.log("error");
 			  });
@@ -27,7 +26,6 @@ function ($scope, $http, Service, $state, $rootScope) {
 	
 	$scope.saveRelease = function(){
 		
-		console.log('here');
 		$scope.release = {
 				"name": $scope.name,
 				"version": $scope.version,
@@ -47,7 +45,6 @@ function ($scope, $http, Service, $state, $rootScope) {
 		  }, function errorCallback(response) {
 			  console.log("error");
 		  });
-		
 	}
 	$scope.releaseList = {};
 }]);

@@ -24,7 +24,9 @@ public class ReleaseServiceImpl implements ReleaseService {
 
 		ReleaseConverter converter = new ReleaseConverter();
 		release.setDate(new Date());
-		Release entity = repository.save(converter.toEntity(release));
+		Release entity = converter.toEntity(release);
+		entity.setId(ReleaseRepository.ID.getAndIncrement());
+		entity = repository.save(entity);
 		
 		return converter.toBean(entity);
 	}

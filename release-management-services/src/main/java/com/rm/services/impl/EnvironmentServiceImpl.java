@@ -20,9 +20,13 @@ public class EnvironmentServiceImpl implements EnvironmentService {
 	private EnvironmentRepository repository;
 
 	@Override
-	public EnvironmentBean save(Environment environment) {
+	public EnvironmentBean save(EnvironmentBean environmentBean) {
+		
+		EnvironmentConverter converter = new EnvironmentConverter();
+		Environment environment = converter.toEntity(environmentBean);
+		environment.setId(EnvironmentRepository.ID.getAndIncrement());
 		repository.save(environment);
-		return null;
+		return converter.toBean(environment);
 	}
 
 	@Override

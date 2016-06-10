@@ -12,6 +12,9 @@ angular.module('app')
 		},
 		getReleaseList: function(args) {
 			return $http({ method: 'GET', url: '/release-service/getAllRelease' });
+		},
+		saveEnvironment: function(args) {
+			return $http({ method: 'POST', url: '/environment-service/save', data: args });
 		}
 	}
 }]);
