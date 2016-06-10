@@ -7,8 +7,7 @@ angular.module('app').controller("LoginController", ['$scope', '$http','Service'
 	
 	$scope.loginUser = function(){
 				
-		//var userCredentials = {"id": $scope.user, "password": $scope.password};
-		var userCredentials = {"id": 'imurga', "password": 'imurga'};
+		var userCredentials = {"id": $scope.user, "password": $scope.password};
 		
 		console.log(userCredentials);
 		
