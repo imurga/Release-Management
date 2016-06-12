@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
 
 	@Id
-	private long userId;
+	private Long userId;
 
 	private String userName;
 
