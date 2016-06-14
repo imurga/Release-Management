@@ -5,12 +5,15 @@
 	<title>Release Management</title>
 	
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.0-rc.5/angular-material.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.2/css/ngDialog.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.2/css/ngDialog-theme-default.css" />
 	<link rel="stylesheet" type="text/css" href="css/login.css" />
 	<link rel="stylesheet" type="text/css" href="css/app.css" />
 	
 	<script type="text/javascript" src="js/vendors/jquery.js"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.2/js/ngDialog.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-animate.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-aria.js"></script>
@@ -23,9 +26,20 @@
 	<script src="js/controller/loginController.js"></script>
 	<script src="js/controller/boardController.js"></script>
 	<script src="js/controller/environmentController.js"></script>
+	<script src="js/directives/confirmButton.js"></script>
 	<script type="text/javascript" src="js/controller/services.js"></script>
 
-	
+	<script type="text/ng-template" id="confirmButton">
+		<fieldset class="popupFieldset">
+			<legend>
+				<span class="header">Confirm</span>
+			</legend>
+			Are you sure you wanna continue?
+			<br><br>
+			<button class="btn btn-primary btn-xs" data-ng-click="confirm(confirmValue)">Confirm</button> 
+			<button class="btn btn-default btn-xs" data-ng-click="closeThisDialog('button')">Cancel</button>
+		</fieldset>
+	</script>
 </head>
 <body>
 	<div>

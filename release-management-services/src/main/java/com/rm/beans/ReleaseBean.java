@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class ReleaseBean {
 
-	private long id;
+	private Integer id;
 
 	private String name;
 
@@ -22,11 +22,11 @@ public class ReleaseBean {
 
 	private String branch;
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

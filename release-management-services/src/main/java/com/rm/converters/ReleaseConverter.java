@@ -9,7 +9,7 @@ import com.rm.dao.entity.Release;
 
 public class ReleaseConverter {
 
-	public ReleaseBean toBean(Release release) {
+	public static ReleaseBean toBean(Release release) {
 		MapperFactory mapperFactory = new DefaultMapperFactory.Builder()
 				.build();
 		mapperFactory.classMap(ReleaseBean.class, Release.class)
@@ -25,7 +25,7 @@ public class ReleaseConverter {
 		return mapper.map(release, ReleaseBean.class);
 	}
 
-	public Release toEntity(ReleaseBean releaseBean) {
+	public static Release toEntity(ReleaseBean releaseBean) {
 		MapperFactory mapperFactory = new DefaultMapperFactory.Builder()
 				.build();
 		mapperFactory.classMap(Release.class, ReleaseBean.class)

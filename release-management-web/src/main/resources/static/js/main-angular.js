@@ -1,4 +1,4 @@
-var app = angular.module("app", ['ui.router','ngMaterial', 'ngAnimate']);
+var app = angular.module("app", ['ui.router','ngMaterial', 'ngAnimate', 'confirm-button']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $provide) {
 	$stateProvider

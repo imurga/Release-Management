@@ -15,6 +15,9 @@ angular.module('app')
 		},
 		saveEnvironment: function(args) {
 			return $http({ method: 'POST', url: '/environment-service/save', data: args });
+		},
+		deleteRelease: function(args) {
+			return $http({ method: 'GET', url: '/release-service/delete', params: args });
 		}
 	}
 }]);

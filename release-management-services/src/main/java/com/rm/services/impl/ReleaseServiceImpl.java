@@ -21,26 +21,29 @@ public class ReleaseServiceImpl implements ReleaseService {
 
 	@Override
 	public ReleaseBean save(ReleaseBean release) {
-
-		ReleaseConverter converter = new ReleaseConverter();
 		release.setDate(new Date());
-		Release entity = converter.toEntity(release);
+		Release entity = ReleaseConverter.toEntity(release);
 		entity.setId(ReleaseRepository.ID.getAndIncrement());
 		entity = repository.save(entity);
 		
-		return converter.toBean(entity);
+		return ReleaseConverter.toBean(entity);
 	}
 
 	@Override
 	public List<ReleaseBean> getAllRelease() {
 		
 		List<ReleaseBean> releaseList = new ArrayList<ReleaseBean>();
-		ReleaseConverter converter = new ReleaseConverter();
 		
 		for (Release release : repository.findAll()) {
-			releaseList.add(converter.toBean(release));
+			releaseList.add(ReleaseConverter.toBean(release));
 		}
 		return releaseList;
+	}
+
+	@Override
+	public boolean delete(Integer id) {
+		repository.delete(id);
+		return true;
 	}
 
 }

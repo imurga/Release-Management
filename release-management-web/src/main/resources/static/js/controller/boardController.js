@@ -1,4 +1,4 @@
-angular.module('app').controller("BoardController", ['$scope', '$http', 'Service', '$state', '$rootScope',
+angular.module('app').controller("BoardController", ['$scope', '$http', 'Service', '$state', '$rootScope', 
 function ($scope, $http, Service, $state, $rootScope) {
 	
 	$rootScope.showNav = true;
@@ -47,4 +47,18 @@ function ($scope, $http, Service, $state, $rootScope) {
 		  });
 	}
 	$scope.releaseList = {};
+	
+	$scope.deleteRelease = function(id) {
+		
+		var release = {"id": id};
+		
+		console.log(release);
+		
+		Service.deleteRelease(release)
+		.then(function successCallback(response) {
+			$scope.releaseList.splice(id, 1);
+		  }, function errorCallback(response) {
+			  console.log("error");
+		  });
+	}
 }]);
